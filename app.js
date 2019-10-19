@@ -19,7 +19,16 @@ var express		= require('express'),
 
 
 
-mongoose.connect("mongodb://localhost:27017/yelp_camp_v11s", {useNewUrlParser: true});
+// mongoose.connect("mongodb://localhost:27017/yelp_camp_v11s", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://hellobye:hellobye123@cluster0-09sus.mongodb.net/test?retryWrites=true&w=majority", {
+	useNewUrlParser: true,
+	useCreateIndex: true
+}).then(() => {
+	console.log('Connected to DB!');
+}).catch(err => {
+	console.log('error:', err.message);
+});
+
 mongoose.set('useUnifiedTopology', true);
 
 seedDB();
@@ -56,9 +65,13 @@ app.use('/campgrounds/:id/comments', commentRoutes);
 
 ////////////
 
-app.listen(process.env.PORT || 3000, ()=>{
+// app.listen(process.env.PORT || 3000, ()=>{
+// 	console.log('Server is running. Good');
+// })
+
+app.listen(process.env.PORT, process.env.IP, 3000, ()=>{
 	console.log('Server is running. Good');
-})
+});
 
 // var http = require('http');
 // http.createServer(function (req, res) {
