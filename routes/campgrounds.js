@@ -11,7 +11,7 @@ router.get('/', (req,res) =>{
 		if(err)
 			console.log("Error in retriving data");
 		else
-			res.render('campgrounds/index', {campgrounds:allCampgrounds, currentUser: req.user});
+			res.render('campgrounds/index', {campgrounds:allCampgrounds, currentUser: req.user, page: 'campgrounds'});
 	});
 });
 
