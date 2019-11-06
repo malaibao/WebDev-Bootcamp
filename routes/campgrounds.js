@@ -4,15 +4,16 @@ var Campground = require('../models/campground');
 var middleware = require('../middleware');
 //if only require /middleware, it will automatically require index.js
 
-//INDEX
-router.get('/', (req,res) =>{
-	//get data from db
-	Campground.find({}, (err, allCampgrounds)=>{
-		if(err)
-			console.log("Error in retriving data");
-		else
-			res.render('campgrounds/index', {campgrounds:allCampgrounds, currentUser: req.user});
-	});
+//INDEX - show all campgrounds
+router.get("/", function(req, res){
+    // Get all campgrounds from DB
+    Campground.find({}, function(err, allCampgrounds){
+       if(err){
+           console.log(err);
+       } else {
+          res.render("campgrounds/index",{campgrounds: allCampgrounds, page: 'campgrounds'});
+       }
+    });
 });
 
 router.post('/', middleware.isLoggedIn, (req, res)=>{
