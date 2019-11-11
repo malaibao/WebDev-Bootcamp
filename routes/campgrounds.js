@@ -73,7 +73,7 @@ router.post('/', middleware.isLoggedIn, (req, res)=>{
 	var newCampground = {name: req.body.name, price: req.body.price, image: req.body.image, description: req.body.description, author: author};
 	//console.log(req.user);
 
-	/*campgrounds.push(newCampground); */
+	//campgrounds.push(newCampground); 
 	//Create new campground and save to db
 	Campground.create(newCampground, (err, newlyCreated)=>{
 		if(err)
@@ -82,11 +82,11 @@ router.post('/', middleware.isLoggedIn, (req, res)=>{
 			res.redirect('/campgrounds'); //go to get in default //redirect back to campground page
 	});	
 });
+*/
 
 router.get('/new', middleware.isLoggedIn, (req, res)=>{
 	res.render('campgrounds/new');
 });
-*/
 
 //SHOW MORE INFO ABOUT CAMPGROUND
 router.get('/:id', (req,res)=>{
