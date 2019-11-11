@@ -19,7 +19,6 @@ html {
     margin: 20px 0;
   }
 
-
 .thumbnail img{
     width: 100%;
 }
@@ -34,4 +33,10 @@ html {
 
 #delete-form{
     display: inline;
+}
+
+/* Google Maps */
+#map {
+  height: 400px;
+  width: 100%;
 }
