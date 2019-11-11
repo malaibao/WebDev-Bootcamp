@@ -28,7 +28,7 @@ mongoose.connect(process.env.DATABASEURL, {
 
 mongoose.set('useUnifiedTopology', true);
 
-seedDB();
+// seedDB();
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
