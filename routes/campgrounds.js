@@ -129,11 +129,11 @@ router.put("/:id", middleware.checkCampgroundOwnership, function(req, res){
 		req.flash('error', 'Invalid address');
 		return res.redirect('back');
 	  }
-	  req.body.campground.lat = data[0].latitude;
-	  req.body.campground.lng = data[0].longitude;
-	  req.body.campground.location = data[0].formattedAddress;
+	  req.body.newCamp.lat = data[0].latitude;
+	  req.body.newCamp.lng = data[0].longitude;
+	  req.body.newCamp.location = data[0].formattedAddress;
   
-	  Campground.findByIdAndUpdate(req.params.id, req.body.campground, function(err, campground){
+	  Campground.findByIdAndUpdate(req.params.id, req.body.newCamp, function(err, campground){
 		  if(err){
 			  req.flash("error", err.message);
 			  res.redirect("back");
