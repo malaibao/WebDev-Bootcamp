@@ -64,9 +64,9 @@
               scrollwheel: false
           });
           var contentString = `
-            <strong><%= campground.name %><br />
-            <%= campground.location %></strong>
-            <p><%= campground.description %></p>
+            <strong><%= foundCampground.name %><br />
+            <%= foundCampground.location %></strong>
+            <p><%= foundCampground.description %></p>
           `
           var infowindow = new google.maps.InfoWindow({
             content: contentString
