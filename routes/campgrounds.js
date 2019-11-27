@@ -17,6 +17,7 @@ var geocoder = NodeGeocoder(options);
 
 //if only require /middleware, it will automatically require index.js
 
+<<<<<<< HEAD
 //INDEX - show all campgrounds
 router.get("/", function(req, res){
     // Get all campgrounds from DB
@@ -27,6 +28,17 @@ router.get("/", function(req, res){
           res.render("campgrounds/index",{campgrounds: allCampgrounds, page: 'campgrounds'});
        }
     });
+=======
+//INDEX
+router.get('/', (req,res) =>{
+	//get data from db
+	Campground.find({}, (err, allCampgrounds)=>{
+		if(err)
+			console.log("Error in retriving data");
+		else
+			res.render('campgrounds/index', {campgrounds:allCampgrounds, currentUser: req.user, page: 'campgrounds'});
+	});
+>>>>>>> 927d2921320de25c2f6721a44c4949b7f488ce41
 });
 
 //CREATE - add new campground to DB
