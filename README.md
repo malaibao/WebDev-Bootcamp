@@ -1,6 +1,5 @@
 # Description
-YelpCamp is a RESTFUL web application that is built in the final project of Udemy Course.
-
+YelpCamp is a RESTFUL web application for users to read, create, edit and delete the campgrounds.
 ## Built with
 * Node.js
 * Express
